@@ -2,6 +2,7 @@ package com.crmapplication.crmapplication.controller;
 
 import com.crmapplication.crmapplication.entity.Lead;
 import com.crmapplication.crmapplication.service.impl.LeadServiceImpl;
+import com.crmapplication.crmapplication.util.PageResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +24,28 @@ public class LeadController {
     @Autowired
     private LeadServiceImpl leadService;
 
-
-
+ @GetMapping("/")
+    public String getStarted(){
+        return "Welcome to the App";
+    }
 
     @GetMapping("/filtered-paginated")
-    public ResponseEntity<Page<Lead>> getLeadsByleadSourcePaginated(@RequestParam(name = "status") String leadSource,
-                                                                @RequestParam(defaultValue = "0") int page,
-                                                                @RequestParam(defaultValue = "10") int size)
+    public ResponseEntity<PageResponse> getLeadsByleadSourcePaginated(
+            @RequestParam(name = "status") String leadSource, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size)
     {
         logger.info("getting lead by leadSource = {}",leadSource);
+
         Page<Lead> leads = leadService.getLeadsByStatusPaginated(leadSource, PageRequest.of(page, size));
-        return ResponseEntity.ok(leads);
+        List<Lead> content = leads.getContent();
+
+        PageResponse pageResponse = new PageResponse();
+        pageResponse.setContent(content);
+        pageResponse.setPageNo(leads.getNumber());
+        pageResponse.setPageSize(leads.getSize());
+        pageResponse.setTotalPages(leads.getTotalPages());
+        pageResponse.setTotalElements(leads.getTotalElements());
+        pageResponse.setLast(leads.isLast());
+        return ResponseEntity.ok(pageResponse);
     }
 
 
