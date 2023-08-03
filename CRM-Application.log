@@ -13380,3 +13380,209 @@ java.lang.Exception: exception just for purpose of providing stack trace
 2023-08-03T20:08:51.304+05:30  INFO 13148 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2023-08-03T20:08:51.338+05:30  INFO 13148 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2023-08-03T20:08:51.346+05:30  INFO 13148 --- [restartedMain] c.c.c.CrmapplicationApplication          : Started CrmapplicationApplication in 6.887 seconds (process running for 7.439)
+2023-08-03T20:09:07.015+05:30  INFO 13148 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-03T20:09:07.015+05:30  INFO 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-03T20:09:07.015+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-08-03T20:09:07.015+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-08-03T20:09:07.015+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-08-03T20:09:07.017+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@764f2cf2
+2023-08-03T20:09:07.017+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@700e8e46
+2023-08-03T20:09:07.017+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-08-03T20:09:07.018+05:30  INFO 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-03T20:09:07.030+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead", parameters={}
+2023-08-03T20:09:07.045+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crmapplication.crmapplication.controller.LeadController#getLeads()
+2023-08-03T20:09:07.060+05:30  INFO 13148 --- [http-nio-8080-exec-2] c.c.c.controller.LeadController          : getting all leads
+2023-08-03T20:09:07.076+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.h.e.t.internal.TransactionImpl         : On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2023-08-03T20:09:07.076+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.h.e.t.internal.TransactionImpl         : begin
+2023-08-03T20:09:07.176+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.sql.ast.create         : Created new SQL alias : l1_0
+2023-08-03T20:09:07.177+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.sql.ast.create         : Registration of TableGroup [StandardTableGroup(com.crmapplication.crmapplication.entity.Lead(209463648191500))] with identifierForTableGroup [com.crmapplication.crmapplication.entity.Lead] for NavigablePath [com.crmapplication.crmapplication.entity.Lead] 
+2023-08-03T20:09:07.192+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.graph.AST      : DomainResult Graph:
+ \-EntityResultImpl [com.crmapplication.crmapplication.entity.Lead(209463648191500)]
+ |  +-BasicFetch [com.crmapplication.crmapplication.entity.Lead(209463648191500).email]
+ |  +-BasicFetch [com.crmapplication.crmapplication.entity.Lead(209463648191500).firstName]
+ |  +-BasicFetch [com.crmapplication.crmapplication.entity.Lead(209463648191500).lastName]
+ |  +-BasicFetch [com.crmapplication.crmapplication.entity.Lead(209463648191500).leadSource]
+ |  \-BasicFetch [com.crmapplication.crmapplication.entity.Lead(209463648191500).mobile]
+
+2023-08-03T20:09:07.192+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.sql.ast.tree           : SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (l1 : com.crmapplication.crmapplication.entity.Lead(209463648191500)) {
+          primaryTableReference : leads as l1_0
+        }
+      }
+    }
+
+2023-08-03T20:09:07.210+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.sql.exec               : Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+2023-08-03T20:09:07.227+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Initializer list
+2023-08-03T20:09:07.228+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                :     com.crmapplication.crmapplication.entity.Lead(209463648191500) -> EntityResultInitializer(com.crmapplication.crmapplication.entity.Lead(209463648191500))@469531834 (SingleTableEntityPersister(com.crmapplication.crmapplication.entity.Lead))
+2023-08-03T20:09:07.232+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select l1_0.id,l1_0.email,l1_0.first_name,l1_0.last_name,l1_0.lead_source,l1_0.mobile from leads l1_0
+2023-08-03T20:09:07.239+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [3]
+2023-08-03T20:09:07.240+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 3
+2023-08-03T20:09:07.241+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#3] : 263974581
+2023-08-03T20:09:07.242+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [SarangK45@gmail.com]
+2023-08-03T20:09:07.242+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Sarang ]
+2023-08-03T20:09:07.242+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Kamle]
+2023-08-03T20:09:07.242+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [Twitter]
+2023-08-03T20:09:07.242+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [80804561575]
+2023-08-03T20:09:07.248+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#3
+2023-08-03T20:09:07.248+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.249+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [4]
+2023-08-03T20:09:07.249+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 4
+2023-08-03T20:09:07.250+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#4] : 1461551104
+2023-08-03T20:09:07.250+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [Kadarsg69@gmail.com]
+2023-08-03T20:09:07.250+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Adarsh ]
+2023-08-03T20:09:07.250+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Kpase]
+2023-08-03T20:09:07.250+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [Instagram]
+2023-08-03T20:09:07.250+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [997845124585]
+2023-08-03T20:09:07.250+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#4
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [5]
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 5
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#5] : 1927141662
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [suraj@gmail.com]
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [suraj ]
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [gawhare]
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [Instagram]
+2023-08-03T20:09:07.251+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [9865987457]
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#5
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [7]
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 7
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#7] : 248436943
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [lokesh@gmail.com]
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [lokesh ]
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [bhakre]
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [Instagram]
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [5469745157]
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#7
+2023-08-03T20:09:07.252+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [8]
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 8
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#8] : 947645092
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [milind@gmail.com]
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [milind ]
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [motghare]
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [whatsapp]
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [78745784657]
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#8
+2023-08-03T20:09:07.253+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [9]
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 9
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#9] : 56451115
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [john.doe@example.com]
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [John]
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Doe]
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [website]
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [1234567890]
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#9
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.254+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [10]
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 10
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#10] : 525618295
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [jane.smith@example.com]
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Jane]
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Smith]
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [referral]
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [9876543210]
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#10
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [11]
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 11
+2023-08-03T20:09:07.255+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#11] : 1738864626
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [alex.johnson@example.com]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Alex]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Johnson]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [social_media]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [8765432109]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#11
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [13]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 13
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#13] : 15540072
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [emily.brown@example.com]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Emily]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Brown]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [instagram]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [6543210987]
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#13
+2023-08-03T20:09:07.256+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [14]
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 14
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#14] : 1759083366
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [michael.lee@example.com]
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Michael]
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Lee]
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [whatsapp]
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [4567890123]
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#14
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [15]
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 15
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#15] : 1439938046
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [sophia.wang@example.com]
+2023-08-03T20:09:07.257+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Sophia]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Wang]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [whatsapp]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [7890123456]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#15
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [16]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 16
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#16] : 361284561
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [william.jones@example.com]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [William]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Jones]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [whatsapp]
+2023-08-03T20:09:07.258+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [8901234567]
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#16
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [17]
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 17
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#17] : 2113308759
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [olivia.garcia@example.com]
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Olivia]
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Garcia]
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [newspaper]
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [9012345678]
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#17
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [18]
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 18
+2023-08-03T20:09:07.259+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#18] : 1582812868
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [james.martinez@example.com]
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [James]
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Martinez]
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [newspaper]
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [3456789012]
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#18
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [21]
+2023-08-03T20:09:07.260+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 21
+2023-08-03T20:09:07.261+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#21] : 207339312
+2023-08-03T20:09:07.261+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [liam.anderson@example.com]
+2023-08-03T20:09:07.261+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Liam]
+2023-08-03T20:09:07.261+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Anderson]
+2023-08-03T20:09:07.261+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [instagram]
+2023-08-03T20:09:07.261+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [7890987654]
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#21
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [0] - [22]
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Hydrated EntityKey (com.crmapplication.crmapplication.entity.Lead(209463648191500)): 22
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Created new entity instance [com.crmapplication.crmapplication.entity.Lead(209463648191500)#22] : 1813668241
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [1] - [ava.williams@example.com]
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [2] - [Ava]
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [3] - [Williams]
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [4] - [instagram]
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results                : Extracted JDBC value [5] - [6574839201]
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.hibernate.orm.results.loading.entity   : (EntityResultInitializer) Done materializing entityInstance : com.crmapplication.crmapplication.entity.Lead(209463648191500)#22
+2023-08-03T20:09:07.262+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] org.hibernate.orm.results.loading        : Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@1e177e5b
+2023-08-03T20:09:07.267+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.h.e.t.internal.TransactionImpl         : committing
+2023-08-03T20:09:07.298+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2023-08-03T20:09:07.306+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Lead(id=3, firstName=Sarang , lastName=Kamle, email=SarangK45@gmail.com, mobile=80804561575, leadSo (truncated)...]
+2023-08-03T20:09:07.359+05:30 DEBUG 13148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-03T20:09:09.281+05:30 DEBUG 13148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/", parameters={}
+2023-08-03T20:09:09.282+05:30 DEBUG 13148 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crmapplication.crmapplication.controller.LeadController#getStarted()
+2023-08-03T20:09:09.283+05:30 DEBUG 13148 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2023-08-03T20:09:09.284+05:30 DEBUG 13148 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Welcome to the App"]
+2023-08-03T20:09:09.285+05:30 DEBUG 13148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
