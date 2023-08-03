@@ -29,7 +29,9 @@ public class LeadController {
     @GetMapping("/filtered-paginated")
     public ResponseEntity<Page<Lead>> getLeadsByleadSourcePaginated(@RequestParam(name = "status") String leadSource,
                                                                 @RequestParam(defaultValue = "0") int page,
-                                                                @RequestParam(defaultValue = "10") int size) {
+                                                                @RequestParam(defaultValue = "10") int size)
+    {
+        logger.info("getting lead by leadSource = {}",leadSource);
         Page<Lead> leads = leadService.getLeadsByStatusPaginated(leadSource, PageRequest.of(page, size));
         return ResponseEntity.ok(leads);
     }
