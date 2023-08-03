@@ -27,7 +27,7 @@ public class ContactController {
     @Autowired
     private LeadServiceImpl leadService;
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<Contact>> listAllContacts() {
         logger.info("getting contacts");
         List<Contact> contacts = contactService.listAll();

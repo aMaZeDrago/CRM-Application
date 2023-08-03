@@ -5,6 +5,8 @@ import com.crmapplication.crmapplication.exception.ResourceNotFoundException;
 import com.crmapplication.crmapplication.repositories.LeadRepository;
 import com.crmapplication.crmapplication.service.LeadService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +17,10 @@ public class LeadServiceImpl implements LeadService {
 
     @Autowired
     private LeadRepository leadRepo;
+
+    public Page<Lead> getLeadsByStatusPaginated(String leadSource, Pageable pageable) {
+        return leadRepo.findByleadSource(leadSource, pageable);
+    }
 
 
     @Override
