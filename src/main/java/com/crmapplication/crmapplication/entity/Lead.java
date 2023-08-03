@@ -31,4 +31,7 @@ public class Lead {
     @Column(name = "lead_source")
     private String leadSource;
 
+//    @Column(name = "status")
+//    private String status;
+
 }
