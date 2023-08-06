@@ -1,5 +1,4 @@
-package com.student.security;
-
+package com.crmapplication.crmapplication.security;
 
 
 import io.jsonwebtoken.*;

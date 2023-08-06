@@ -1,8 +1,8 @@
-package com.student.security;
+package com.crmapplication.crmapplication.security;
 
-import com.student.entity.Role;
-import com.student.entity.User;
-import com.student.repository.UserRepository;
+import com.crmapplication.crmapplication.entity.Role;
+import com.crmapplication.crmapplication.entity.User;
+import com.crmapplication.crmapplication.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
